@@ -9,10 +9,12 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng-semantic': 'vendor/ng-semantic'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'ng-semantic': {main: 'ng-semantic.js', defaultExtension: 'js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +38,8 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/navbar',
+  'app/sidebar',
   /** @cli-barrel */
 ];
 

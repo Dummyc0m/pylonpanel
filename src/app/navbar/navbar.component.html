@@ -1,0 +1,25 @@
+<div class="navbar">
+  <sm-menu title="PylonPanel" class="big inverted blue" smDeviceVisibility="tablet computer">
+    <a sm-item class="header">{{title}}</a>
+      <a sm-item *ngFor="let item of leftItems" [icon]="item.icon">{{item?.title}}</a>
+    <sm-menu class="menu right secondary">
+      <a sm-item *ngFor="let item of rightItems" [icon]="item.icon"></a>
+    </sm-menu>
+  </sm-menu>
+  <sm-menu title="PylonPanel" class="big inverted blue" smDeviceVisibility="mobile only">
+    <a sm-item class="header">{{title}}</a>
+    <sm-menu class="menu right secondary">
+      <a sm-item icon="sidebar" (click)="menuSidebar.show({transition: 'overlay'})"></a>
+    </sm-menu>
+  </sm-menu>
+</div>
+<sm-sidebar class="right vertical inverted sidebar labeled icon menu blue" #menuSidebar>
+  <a class="item" *ngFor="let item of leftItems">
+    <i class="{{item?.icon}} icon"></i>
+    {{item?.title}}
+  </a>
+  <a class="item" *ngFor="let item of rightItems">
+    <i class="{{item?.icon}} icon"></i>
+    {{item?.title}}
+  </a>
+</sm-sidebar>
