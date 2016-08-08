@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES } from "ng-semantic";
+import {UserService} from "../user.service";
 
 @Component({
   moduleId: module.id,
   selector: 'navbar',
-  directives: [SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES],
+  directives: [SEMANTIC_COMPONENTS, SEMANTIC_DIRECTIVES, ROUTER_DIRECTIVES],
   templateUrl: 'navbar.component.html',
   styleUrls: ['navbar.component.css']
 })
@@ -14,7 +16,7 @@ export class NavbarComponent implements OnInit {
 
   title = 'Pylon Panel';
 
-  constructor() {
+  constructor(@Inject(UserService) private userService: UserService) {
     this.leftItems = [{
       "title": "Home",
       "icon": "home"
@@ -25,7 +27,7 @@ export class NavbarComponent implements OnInit {
         "title": "Contact",
         "icon": "user"
       }];
-    
+
     this.rightItems = [{
         "title": "Settings",
         "icon": "settings"

@@ -9,12 +9,17 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'ng-semantic': 'vendor/ng-semantic'
+  'ng-semantic': 'vendor/ng-semantic',
+  'sockjs-client': 'vendor/sockjs-client/lib/entry.js'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  'ng-semantic': {main: 'ng-semantic.js', defaultExtension: 'js'}
+  'ng-semantic': {main: 'ng-semantic.js', defaultExtension: 'js'},
+  'vendor/sockjs-client/lib': {
+    format: 'cjs',
+    defaultExtension: 'js'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

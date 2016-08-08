@@ -17,8 +17,8 @@
   },
 
   "files": [
-    "index.html",
     "main.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "../typings/browser/ambient/sockjs-client/index.d.ts"
   ]
 }
